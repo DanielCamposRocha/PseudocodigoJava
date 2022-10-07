@@ -24,5 +24,5 @@ public class Main {
         return "estos son los números primos menores que 100";
     }
 
-    
+
 }
