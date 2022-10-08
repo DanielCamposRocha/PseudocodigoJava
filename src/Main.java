@@ -5,7 +5,12 @@ public class Main {
         Scanner sc=new Scanner(System.in);
 
        do {
-           System.out.println("seleccione metodo a usar; 0 salir 1 tabla 2 mayormenor 3 entredos 4 primo");
+           System.out.println("seleccione metodo a usar:");
+           System.out.println("pulse 0 para salir");
+           System.out.println("pulse 1 método tabla");
+           System.out.println("pulse 2 método mayormenor");
+           System.out.println("pulse 3 método entredos");
+           System.out.println("pulse 4 método números primos");
            c = sc.nextInt();
            switch (c) {
 
