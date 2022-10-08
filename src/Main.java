@@ -35,7 +35,7 @@ public class Main {
 
 
     }
-
+/*se valida una fecha no se tienen en cuenta los bisiestos*/
     private static void validarfecha() {
         int dia,mes,anho;
         Scanner sc=new Scanner(System.in);
