@@ -30,8 +30,6 @@ public class Main {
     private static void entredos() {
         Scanner sc=new Scanner(System.in);
         int mayor,menor,pares,num1,num2,pimpares;
-        mayor=0;
-        menor=0;
         pares=0;
         pimpares=1;
         System.out.println("Introduzca un número");
@@ -78,7 +76,7 @@ public class Main {
     }
     /*multiplos de 3 menores que*/
     private static void tabla() {
-        int n = 0;
+        int n;
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduzca un número");
         n = sc.nextInt();
