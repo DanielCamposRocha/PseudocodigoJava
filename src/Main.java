@@ -14,22 +14,11 @@ public class Main {
            System.out.println("pulse 5 método validar fecha");
            c = sc.nextInt();
            switch (c) {
-
-               case 1:
-                   tabla();
-                   break;
-               case 2:
-                   mayormenor();
-                   break;
-               case 3:
-                   entredos();
-                   break;
-               case 4:
-                   primo();
-                   break;
-               case 5:
-                   validarfecha();
-                   break;
+               case 1 -> tabla();
+               case 2 -> mayormenor();
+               case 3 -> entredos();
+               case 4 -> primo();
+               case 5 -> validarfecha();
            }
        }while(c!=0);
 
