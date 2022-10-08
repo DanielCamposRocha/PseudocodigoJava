@@ -11,6 +11,7 @@ public class Main {
            System.out.println("pulse 2 método mayormenor");
            System.out.println("pulse 3 método entredos");
            System.out.println("pulse 4 método números primos");
+           System.out.println("pulse 5 método validar fecha");
            c = sc.nextInt();
            switch (c) {
 
@@ -26,11 +27,51 @@ public class Main {
                case 4:
                    primo();
                    break;
+               case 5:
+                   validarfecha();
+                   break;
            }
        }while(c!=0);
 
 
     }
+
+    private static void validarfecha() {
+        int dia,mes,anho;
+        Scanner sc=new Scanner(System.in);
+        do {
+            System.out.println("Introduzca dia");
+            dia = sc.nextInt();
+        }while(1>dia || dia>31 );
+        do {
+            System.out.println("Introduzca mes");
+            mes = sc.nextInt();
+        }while(1>mes || mes>12);
+        do {
+            System.out.println("Introduzca año");
+            anho = sc.nextInt();
+        }while(anho<0);
+        switch (mes){
+            case 2:
+                if (dia>28){
+                    System.out.println("Febrero tiene entre 28 o 29 dias dependiendo si es bisiesto");
+                    do{
+                        System.out.println("Dia no valido. Introduzca un número de día.");
+                        dia = sc.nextInt();
+                    }while(!(dia <= 29) && !(dia>1));
+                }
+            case 4,6,9,11:
+                if (dia>30){
+                    System.out.println("dia de mes no valido, este mes tiene 30 dias");
+                    do {
+                        System.out.println("Dia no valido. Introduzca un número de día.");
+                        dia = sc.nextInt();
+                    }while(!(dia<30) && !(dia>1));
+                }
+        }
+        System.out.println("la fecha es: "+dia+"/"+mes+ "/"+ anho);
+    }
+
     /*dos múmeros*/
     private static void entredos() {
         Scanner sc=new Scanner(System.in);
