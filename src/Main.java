@@ -50,7 +50,7 @@ public class Main {
                    break;
                case 10:
                     do {
-                       System.out.println("pulse 0 para salir");
+                       System.out.println("pulse 0 para volver a la pantalla anterior");
                        System.out.println("pulse 1 método leer 10 numeros por teclado devuelve cantidad de positivos");
                        System.out.println("pulse 2 método calcular factorial de un numero");
                        System.out.println("pulse 3 método obtener el mayor de 3 numeros");
