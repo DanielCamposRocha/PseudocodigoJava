@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class Metodos {
@@ -128,8 +129,8 @@ public class Metodos {
         double num1 = sc.nextDouble();
         System.out.println("introduzca otro numero");
         double num2 = sc.nextDouble();*/
-        double num1= Utilidades.introducirNumero(2.1);
-        double num2= Utilidades.introducirNumero(2.1);
+        float num1= Utilidades.introducirNumero((float)2.5);
+        float num2= Utilidades.introducirNumero((float)2.5);
         if(num2>num1) {
             System.out.println(" la división  de "+num2+" entre "+num1+" es: " + (num2 / num1));
         }else {System.out.println(" la división  de "+num1+" entre "+num2+" es: "+(num1/num2));}
@@ -156,5 +157,113 @@ public class Metodos {
             System.out.println(teclado);
         }while(!teclado.equals("FIN"));
         System.out.println("Se cerró el programa");
+    }
+//suma los numeros enteros menores que un número introducido
+    public static void sumaEnteros() {
+        int n = Utilidades.introducirNumero(1);
+        int aux=n;
+        int suma=0;
+
+        while (aux>0){
+            suma=suma+aux;
+            aux--;
+        }
+        System.out.println("El resultado de sumar los "+n+" primeros numeros enteros es: "+suma);
+    }
+//lee desde teclado numeros hasta que obtiene uno menor que 100
+    public static void menorCien() {
+        int num=Utilidades.introducirNumero(1);
+        while(num>=100){
+            num=Utilidades.introducirNumero(1);
+        }
+        System.out.println(num+" es menor que 100");
+    }
+
+    public static void contarPositivos() {
+        int total=0;
+        for (int i=1; i<=10;i++){
+            int num=Utilidades.introducirNumero(1);
+            if(num>0){
+                total++;
+            }
+        }
+        System.out.println("Se han introducido "+total+" numeros positivos");
+    }
+
+    public static void factorial() {
+        int num=Utilidades.introducirNumero(1);
+        int aux=num-1;
+        int factorial=num;
+        do {
+            factorial=factorial*aux;
+            aux--;
+        }while(!(aux==1));
+        System.out.println("el factorial de "+num+" es: "+factorial);
+    }
+
+
+    public static void mayorDeTres() {
+        int num1=Utilidades.introducirNumero(1);
+        int num2=Utilidades.introducirNumero(1);
+        int num3=Utilidades.introducirNumero(1);
+        if(num1>num2 && num1>num3){
+            System.out.println("El mayor es: "+num1);
+        }else{
+            if (num2>num1 && num2>num3){
+                System.out.println("El mayor es: "+num2);
+            }else{
+                System.out.println("El mayor es: "+num3);
+            }
+        }
+    }
+
+    public static void mostrarPares() {
+        for(int i=1;i<11;i++){
+            if(i % 2 == 0){
+            System.out.println(i+" es un numero par");
+            }
+        }
+    }
+    //tres intentos para obtener una contraseña (la clave es 111 222 y 333)
+    public static void comprobarContrasenha() {
+        int numIntentos=1;
+        int password;
+        do{
+            if(numIntentos>1){
+                System.out.println("Contraseña incorrecta vuelva a intentarlo");
+            }
+            password=Utilidades.introducirNumero(1);
+            numIntentos++;
+        }while(numIntentos<4 && !(password==222)&& !(password==111)&& !(password==333));
+        if (numIntentos>3){
+            System.out.println("Demasiados intentos erroneos");
+        }else{
+            System.out.println("La contraseña es correcta");
+        }
+    }
+
+//media aritmetica de 7 notas
+    public static void mediaNotas() {
+        float sumanotas=0;
+        float nota;
+        Scanner sc= new Scanner(System.in);
+        for(int i=1;i<8;i++){
+            System.out.println("introduzca nota");
+            nota=sc.nextFloat();
+            sumanotas= sumanotas+nota;
+        }
+        System.out.println("La nota de la asignatura es: "+(sumanotas/7));
+    }
+//pide numeros hasta introducir 0, muestra en pantalla la suma y media de los introducidos
+    public static void mediaSuma() {
+        int contnum=0;
+        int sumanum=0;
+        int num=1;
+        do{
+            num=Utilidades.introducirNumero(1);
+            sumanum=sumanum+num;
+            contnum++;
+        }while(!(num==0));
+        System.out.println("La suma de números introducidos es: "+sumanum+" y la media es: "+sumanum/(contnum-1));
     }
 }
