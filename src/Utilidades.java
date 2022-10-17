@@ -11,14 +11,14 @@ public class Utilidades {
     public static float introducirNumero(float i){
         Scanner sc=new Scanner(System.in);
         System.out.println("Introduzca un número, el decimal con coma");
-        float entero=sc.nextFloat();
-        return entero;
+        float decimalcorto=sc.nextFloat();
+        return decimalcorto;
     }
     public static double introducirNumero(double i){
         Scanner sc=new Scanner(System.in);
         System.out.println("Introduzca un número, el decimal con coma");
-        double entero=sc.nextDouble();
-        return entero;
+        double decimal=sc.nextDouble();
+        return decimal;
     }
 
 

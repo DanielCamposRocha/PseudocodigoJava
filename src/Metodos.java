@@ -3,6 +3,8 @@ import java.util.Scanner;
 
 public class Metodos {
 
+
+
     /*se valida una fecha no se tienen en cuenta los bisiestos*/
     public static void validarfecha() {
         int dia,mes,anho;
@@ -122,7 +124,7 @@ public class Metodos {
         }
 
     }
-    // en el double reocrdar porner decimales con coma no con punto
+    // en el double recordar poner decimales con coma no con punto
     public static void dividirMayorMenor() {
         //Scanner sc= new Scanner(System.in);
         /*System.out.println("introduzca numero");
@@ -218,7 +220,7 @@ public class Metodos {
     }
 
     public static void mostrarPares() {
-        for(int i=1;i<11;i++){
+        for(int i=1;i<=10;i++){
             if(i % 2 == 0){
             System.out.println(i+" es un numero par");
             }
@@ -265,5 +267,63 @@ public class Metodos {
             contnum++;
         }while(!(num==0));
         System.out.println("La suma de números introducidos es: "+sumanum+" y la media es: "+sumanum/(contnum-1));
+    }
+//es un aritnometro
+    public static void cuatrOperaciones() {
+        int num1=Utilidades.introducirNumero(1);
+        int num2=Utilidades.introducirNumero(1);
+        System.out.println("Suma: "+(num1+num2));
+        System.out.println("Resta: "+(num1-num2));
+        System.out.println("Multiplicación: "+(num1*num2));
+        if (num2==0) {
+            System.out.println("No se puede dividir enter cero");
+        }else{
+            System.out.println("Division: " + (num1 / num2));
+        }
+    }
+
+    public static void coprobarMes() {
+        int mes=Utilidades.introducirNumero(1);
+        switch (mes){
+            case 1:
+                System.out.println("Enero");
+                break;
+            case 2:
+                System.out.println("Febrero");
+                break;
+            case 3:
+                System.out.println("Marzo");
+                break;
+            case 4:
+                System.out.println("Abril");
+                break;
+            case 5:
+                System.out.println("Mayo");
+                break;
+            case 6:
+                System.out.println("Junio");
+                break;
+            case 7:
+                System.out.println("Julio");
+                break;
+            case 8:
+                System.out.println("Agosto");
+                break;
+            case 9:
+                System.out.println("Septiembre");
+                break;
+            case 10:
+                System.out.println("Octubre");
+                break;
+            case 11:
+                System.out.println("Noviembre");
+                break;
+            case 12:
+                System.out.println("Diciembre");
+                break;
+            default:
+                System.out.println("Mes no valido");
+
+        }
     }
 }

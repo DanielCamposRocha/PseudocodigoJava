@@ -49,31 +49,8 @@ public class Main {
                    Metodos.sumaEnteros();
                    break;
                case 10:
-                    do {
-                       System.out.println("pulse 0 para volver a la pantalla anterior");
-                       System.out.println("pulse 1 método leer 10 numeros por teclado devuelve cantidad de positivos");
-                       System.out.println("pulse 2 método calcular factorial de un numero");
-                       System.out.println("pulse 3 método obtener el mayor de 3 numeros");
-                       System.out.println("pulse 4 método mostrar pares de 1 a 10");
-                       System.out.println("pulse 5 método comprobar contraseña");
-                       System.out.println("pulse 6 método mediaNotas");
-                       System.out.println("pulse 7 método suma y media de numeros introducidos");
-                       System.out.println("pulse 8 método leer por teclado numero menor que 100");
-
-                       d = sc.nextInt();
-                       switch (d) {
-                           case 1 -> Metodos.contarPositivos();
-                           case 2 -> Metodos.factorial();
-                           case 3 -> Metodos.mayorDeTres();
-                           case 4 -> Metodos.mostrarPares();
-                           case 5 -> Metodos.comprobarContrasenha();
-                           case 6 -> Metodos.mediaNotas();
-                           case 7 -> Metodos.mediaSuma();
-                           case 8 -> Metodos.menorCien();
-                       }
-
-                   }while (d != 0) ;
-                    break;
+                   Menu.primero();
+                   break;
 
            }
        }while(c!=0);
