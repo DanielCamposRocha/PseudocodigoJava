@@ -25,7 +25,6 @@ public class Menu {
                 case 6 -> Metodos.mediaNotas();
                 case 7 -> Metodos.mediaSuma();
                 case 8 -> Metodos.menorCien();
-
                 case 9 -> segundo();
             }
 
@@ -46,6 +45,7 @@ public class Menu {
                 case 1 -> Metodos.coprobarMes();
                 case 2 -> Metodos.cuatrOperaciones ();
                 case 3-> Metodos.calculadora();
+
             }
 
         }while (d != 0) ;

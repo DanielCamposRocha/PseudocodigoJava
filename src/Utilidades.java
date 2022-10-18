@@ -5,20 +5,17 @@ public class Utilidades {
     public static int introducirNumero(int i){
         Scanner sc=new Scanner(System.in);
         System.out.println("Introduzca un número entero");
-        int entero=sc.nextInt();
-        return entero;
+        return sc.nextInt();
     }
     public static float introducirNumero(float i){
         Scanner sc=new Scanner(System.in);
         System.out.println("Introduzca un número, el decimal con coma");
-        float decimalcorto=sc.nextFloat();
-        return decimalcorto;
+        return sc.nextFloat();
     }
     public static double introducirNumero(double i){
         Scanner sc=new Scanner(System.in);
         System.out.println("Introduzca un número, el decimal con coma");
-        double decimal=sc.nextDouble();
-        return decimal;
+        return sc.nextDouble();
     }
 
 
