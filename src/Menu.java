@@ -70,37 +70,16 @@ public class Menu {
 
             c = sc.nextInt();
             switch (c) {
-                case 1:
-                    Metodos.tabla();
-                    break;
-                case 2:
-                    Metodos.mayormenor();
-                    break;
-                case 3:
-                    Metodos.entredos();
-                    break;
-                case 4:
-                    Metodos.primo();
-                    break;
-                case 5:
-                    Metodos.validarfecha();
-                    break;
-                case 6:
-                    Metodos.fin();
-                    break;
-                case 7:
-                    Metodos.areaTriamgulo();
-                    break;
-                case 8:
-                    Metodos.dividirMayorMenor();
-                    break;
-                case 9:
-                    Metodos.sumaEnteros();
-                    break;
-                case 10:
-                    Menu.primero();
-                    break;
-
+                case 1 -> Metodos.tabla();
+                case 2 -> Metodos.mayormenor();
+                case 3 -> Metodos.entredos();
+                case 4 -> Metodos.primo();
+                case 5 -> Metodos.validarfecha();
+                case 6 -> Metodos.fin();
+                case 7 -> Metodos.areaTriamgulo();
+                case 8 -> Metodos.dividirMayorMenor();
+                case 9 -> Metodos.sumaEnteros();
+                case 10 -> Menu.primero();
             }
         }while(c!=0);
 

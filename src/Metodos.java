@@ -28,7 +28,7 @@ public class Metodos {
                     do{
                         System.out.println("Dia no valido. Introduzca un número de día.");
                         dia = sc.nextInt();
-                    }while(!(dia <= 29) && !(dia>1));
+                    }while((dia > 29) || (dia<1));
                 }
             case 4,6,9,11:
                 if (dia>30){
@@ -36,7 +36,7 @@ public class Metodos {
                     do {
                         System.out.println("Dia no valido. Introduzca un número de día.");
                         dia = sc.nextInt();
-                    }while(!(dia<30) && !(dia>1));
+                    }while((dia>30)|| dia<1);
                 }
         }
         System.out.println("la fecha es: "+dia+"/"+mes+ "/"+ anho);
@@ -260,7 +260,7 @@ public class Metodos {
     public static void mediaSuma() {
         int contnum=0;
         int sumanum=0;
-        int num=1;
+        int num;
         do{
             num=Utilidades.introducirNumero(1);
             sumanum=sumanum+num;
@@ -284,46 +284,20 @@ public class Metodos {
 
     public static void coprobarMes() {
         int mes=Utilidades.introducirNumero(1);
-        switch (mes){
-            case 1:
-                System.out.println("Enero");
-                break;
-            case 2:
-                System.out.println("Febrero");
-                break;
-            case 3:
-                System.out.println("Marzo");
-                break;
-            case 4:
-                System.out.println("Abril");
-                break;
-            case 5:
-                System.out.println("Mayo");
-                break;
-            case 6:
-                System.out.println("Junio");
-                break;
-            case 7:
-                System.out.println("Julio");
-                break;
-            case 8:
-                System.out.println("Agosto");
-                break;
-            case 9:
-                System.out.println("Septiembre");
-                break;
-            case 10:
-                System.out.println("Octubre");
-                break;
-            case 11:
-                System.out.println("Noviembre");
-                break;
-            case 12:
-                System.out.println("Diciembre");
-                break;
-            default:
-                System.out.println("Mes no valido");
-
+        switch (mes) {
+            case 1 -> System.out.println("Enero");
+            case 2 -> System.out.println("Febrero");
+            case 3 -> System.out.println("Marzo");
+            case 4 -> System.out.println("Abril");
+            case 5 -> System.out.println("Mayo");
+            case 6 -> System.out.println("Junio");
+            case 7 -> System.out.println("Julio");
+            case 8 -> System.out.println("Agosto");
+            case 9 -> System.out.println("Septiembre");
+            case 10 -> System.out.println("Octubre");
+            case 11 -> System.out.println("Noviembre");
+            case 12 -> System.out.println("Diciembre");
+            default -> System.out.println("Mes no valido");
         }
     }
 }
