@@ -39,11 +39,13 @@ public class Menu {
             System.out.println("pulse 0 para volver a la pantalla anterior");
             System.out.println("pulse 1 método comprobarMes");
             System.out.println("pulse 2 método cuatro operaciones");
+            System.out.println("pulse 3 método calculadora");
 
             d = sc.nextInt();
             switch (d) {
                 case 1 -> Metodos.coprobarMes();
                 case 2 -> Metodos.cuatrOperaciones ();
+                case 3-> Metodos.calculadora();
             }
 
         }while (d != 0) ;
