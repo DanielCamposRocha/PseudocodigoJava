@@ -39,12 +39,50 @@ public class Menu {
             System.out.println("pulse 1 método comprobarMes");
             System.out.println("pulse 2 método cuatro operaciones");
             System.out.println("pulse 3 método calculadora");
+            System.out.println("pulse 4 método tabla multiplicar");
+            System.out.println("pulse 5 método tratar nota");
+            System.out.println("pulse 6 método Adivinar");
+            System.out.println("pulse 7 método Nomina");
+            System.out.println("pulse 8 método paresImpares");
+            System.out.println("pulse 9 método multiplos de tres");
+            System.out.println("pulse 10 otros metodos");
 
             d = sc.nextInt();
             switch (d) {
                 case 1 -> Metodos.coprobarMes();
                 case 2 -> Metodos.cuatrOperaciones ();
                 case 3-> Metodos.calculadora();
+                case 4 -> Metodos.tablaMultiplicar();
+                case 5 -> Metodos.tratarNota();
+                case 6 -> Metodos.adivinarNumeros();
+                case 7 -> Metodos.nomina();
+                case 8 -> Metodos.paresImpares();
+                case 9 ->Metodos.multiplosTres();
+                case 10-> tercero();
+
+            }
+
+        }while (d != 0) ;
+    }
+
+    private static void tercero() {
+        Scanner sc=new Scanner(System.in);
+        int d;
+        do {
+            System.out.println("pulse 0 para volver a la pantalla anterior");
+            System.out.println("pulse 1 método mayor menor serie");
+            System.out.println("pulse 2 método pares impares rango");
+            System.out.println("pulse 3 método convertir horas");
+            System.out.println("pulse 4 metodo calculo de sueldo");
+            System.out.println("pulse 5 metodo sumadigitos");
+
+            d = sc.nextInt();
+            switch (d) {
+                case 1 -> Metodos.mayorMenorSerie();
+                case 2->Metodos.paresImparesRango();
+                case 3-> Metodos.convertirHoras();
+                case 4->Metodos.calculoSueldo();
+                case 5->Metodos.sumaDigitos();
 
             }
 

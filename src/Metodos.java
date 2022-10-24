@@ -1,4 +1,5 @@
 
+
 import java.util.Scanner;
 
 public class Metodos {
@@ -107,8 +108,9 @@ public class Metodos {
     /*este primer metodo obtiene los numeros primos menores que 100*/
     public static void primo() {
 
-        System.out.println ("1");
-        System.out.println ("2");
+        System.out.println ("1 es un número primo");
+        System.out.println ("2 es un número primo");
+        //uso paso 2 y me ahorro los pares
         for (int i=3;i<100;i=i+2) {
             int k=3;
             int c=0;
@@ -116,7 +118,7 @@ public class Metodos {
                 if (i%k== 0){
                     c=c+1;
                 }
-                k=k+2;
+                k=k+2;//me ahorro los pares ya que solo dividen a pares
             }
             if (c == 0){
                 System.out.println(i+" es un número primo");
@@ -244,7 +246,7 @@ public class Metodos {
         }
     }
 
-//media aritmetica de 7 notas
+    //media aritmetica de 7 notas
     public static void mediaNotas() {
         float sumanotas=0;
         float nota;
@@ -256,7 +258,7 @@ public class Metodos {
         }
         System.out.println("La nota de la asignatura es: "+(sumanotas/7));
     }
-//pide numeros hasta introducir 0, muestra en pantalla la suma y media de los introducidos
+    //pide numeros hasta introducir 0, muestra en pantalla la suma y media de los introducidos
     public static void mediaSuma() {
         int contnum=0;
         int sumanum=0;
@@ -268,7 +270,7 @@ public class Metodos {
         }while(!(num==0));
         System.out.println("La suma de números introducidos es: "+sumanum+" y la media es: "+sumanum/(contnum-1));
     }
-//es un aritnometro
+    //es un aritnometro
     public static void cuatrOperaciones() {
         int num1=Utilidades.introducirNumero(1);
         int num2=Utilidades.introducirNumero(1);
@@ -324,5 +326,217 @@ public class Metodos {
 
     }
 
+//tablas del 1 al 10
+    public static void tablaMultiplicar() {
+        for (int i=1;i<=10;i++){
+            System.out.println("Tabla de :"+i);
+            for(int n=1;n<=10;n++){
+                System.out.println(i+"x"+n+"="+(i*n));
+            }
+        }
+    }
+//crear una aplicacion para solicitar notas numericas y muestra por pantalla equivalente
+   // al final debera mostar la mayor nota en numero y letra
+    public static void tratarNota() {
+        int nota;
+        int mejorNota=0;
+        String suspenso="Suspenso";
+        String aprobado="Aprobado";
+        String bien="Bien";
+        String notable="Notable";
+        String sobresaliente= "Sobresaliente";
+        do {
+            System.out.println("Para salir pulse -10");
+            nota=Utilidades.introducirNumero(1);
+            switch (nota){
+                case 1,2,3,4:
+                    System.out.println(suspenso);
+                    break;
+                case 5:
+                    System.out.println(aprobado);
+                    break;
+                case 6:
+                    System.out.println(bien);
+                    break;
+                case 7,8:
+                    System.out.println(notable);
+                    break;
+                case 9,10:
+                    System.out.println(sobresaliente);
+                    break;
+                default:
+                    System.out.println("Nota no valida");
+                    break;
+            }
+            if (nota>mejorNota){
+                mejorNota=nota;
+            }
+        }while(nota != -10);
+        if (mejorNota<5){
+        System.out.println("La nota es:"+mejorNota+" es un Suspenso");
+        }
+        if (mejorNota==5){
+            System.out.println("La nota es:"+mejorNota+" es un Aprobado");
+        }
+        if(mejorNota==6){
+            System.out.println("La nota es:"+mejorNota+" es un Bien");
+        }
+        if(6<mejorNota && mejorNota<9){
+            System.out.println("La nota es:"+mejorNota+" es un Notable");
+        }
+        if(mejorNota==9||mejorNota==10){
+            System.out.println("La nota es:"+mejorNota+" es un Sobresaliente");
+        }
 
+
+
+    }
+//adivinar un numero la aplicacion genra de 1 a 100 pide y dice si es menor o mayor que el introducido ademas de los
+    //intentos que te quedan tienes 10 intentos, al acertar y intentos que llegan
+    public static void adivinarNumeros() {
+        int aleatorio= (int)(Math.random()*101);
+        int n=1;
+        int num=1000;
+        do {
+            num=Utilidades.introducirNumero(1);
+            if (num>aleatorio){
+                System.out.println(num+" es mayor que el numero a adivinar");
+            }
+            if (num<aleatorio){
+                System.out.println(num+" es menor que el numero a adivinar");
+            }
+            n=n+1;
+        }while (n<10 && !(num==aleatorio));
+        if (num==aleatorio) {
+            System.out.println("Felicidades has acertado el múmero era: " + num+" te quedaban "+(11-n)+" intentos");
+        }
+        if (n>=10){
+            System.out.println("has consumido tus intentos el numero era: "+aleatorio);
+        }
+    }
+    //salarial neta de obreros 35 primeras a 30 euros, las extras aumentan un 50%, si el sueldo menor de 1000
+// es libre de impuestos si no un 20%
+    public static void nomina() {
+        int sueldo=30;
+        double horas=Utilidades.introducirNumero(2.1);
+        double bruto=0,neto=0;
+        if(horas<35){ bruto=(sueldo*horas);}
+        if (horas>35){ bruto=(sueldo*35)+((horas-35)*sueldo*1.5);}
+        if (bruto<1000){neto=bruto;}
+        if (bruto>1000 || bruto==1000){
+            neto=bruto*0.8;
+        }
+        System.out.println("el obrero cobrara: "+neto+" euros netos");
+        System.out.println(bruto+" es su base de cotizacion y se le descuenta: "+(bruto-neto));
+
+    }
+
+
+    public static void paresImpares() {
+        int suma,sumapares,sumaImpares,contImpares,contPares,aux,num;
+        suma= 0;
+        sumaImpares=0;
+        sumapares=0;
+        contPares=0;
+        contImpares=0;
+        for (aux=1;aux<11;aux++){
+            num=Utilidades.introducirNumero(1);
+            suma=suma+num;
+            if(num % 2==0){
+                sumapares=sumapares+num;
+                contPares++;
+                    }else{
+                sumaImpares=sumaImpares+num;
+                contImpares++;
+            }
+        }
+        System.out.println("La media de los impares es: "+sumaImpares/contImpares);
+        System.out.println("La suma de los pares es: "+sumapares);
+        System.out.println("Se han introducido "+contPares+" numeros pares");
+        System.out.println("La suma total es: "+suma);
+    }
+
+    public static void multiplosTres() {
+        int contador=1,contMult=0;
+        int num=Utilidades.introducirNumero(1);
+        do{
+            if(contador % 3 ==0){
+                System.out.println(contador);
+                contMult++;
+            }
+            contador++;
+        }while(contador<=num);
+        System.out.println("Se han encontrado "+contMult+" multiplos de 3");
+    }
+
+    public static void mayorMenorSerie() {
+        int mayor=0,menor=99999, num;
+        do{
+            num=Utilidades.introducirNumero(1);
+            if(num != -1){
+                if(num>mayor){
+                    mayor=num;
+                }else{
+                    if(num<menor){
+                        menor=num;
+                    }
+                }
+            }
+        }while(!(num==-1));
+        System.out.println("El mayor es: "+mayor+" y el menor es: "+menor);
+    }
+
+    public static void paresImparesRango() {
+        int prodImpares=1, contPares=0,cont=0;
+        int num1=Utilidades.introducirNumero(1);
+        int num2=Utilidades.introducirNumero(1);
+        for (int aux=num1+1;aux<num2;aux++){
+            cont++;
+            if(aux % 2 ==0){
+                contPares++;
+            }else{prodImpares=prodImpares*aux;}
+            System.out.println(aux);
+        }
+        System.out.println("El producto de los impares es: "+prodImpares);
+        System.out.println("Se han encontrado "+contPares+"numeros pares en ese rango");
+        System.out.println("Se han encontrado "+cont+" numeros en ese rango");
+    }
+
+    public static void convertirHoras() {
+        int horas,minutos;
+        int seg=Utilidades.introducirNumero(1);
+        horas=(int)(seg/3600);
+        int segundos= seg % 3600;
+        minutos=(int)(segundos/60);
+        segundos= seg % 60;
+        System.out.println("Horas: "+horas+", minutos: "+minutos+", segundos: "+segundos);
+    }
+
+    public static void calculoSueldo() {
+        int bruto=Utilidades.introducirNumero(1);
+        double descuento;
+        if(bruto<=1000){
+            descuento= (bruto*0.1);
+        }else{
+            if(bruto>1000 && bruto<=2000){
+                descuento=100+(bruto-1000)*0.05;
+            }else{descuento=100+(bruto-1000)*0.03;}
+        }
+        System.out.println("Descuento: "+descuento);
+        System.out.println("Sueldo neto: "+(bruto-descuento));
+    }
+//suma de los digitos de un numero
+    public static void sumaDigitos() {
+        int num=Utilidades.introducirNumero(1);
+        int suma=0, resto, num1=num;
+        String intermedio= Integer.toString(num);
+        int digitos= intermedio.length();
+        for (int i=1;i<=digitos;i++){
+            resto=(num % 10);
+            suma=suma+resto;
+            num=(int)num/10;
+        }
+        System.out.println(suma+" es la suma de los digitos de: "+num1);
+    }
 }
+
